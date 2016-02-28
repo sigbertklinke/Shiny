@@ -1,0 +1,23 @@
+{ "name":         "Shiny",
+  "author":       [ "Sigbert Klinke" ],
+  "url":          "https://www.mediawiki.org/wiki/Extension:Shiny",
+  "description":  "This extension allows to embed Shiny apps into MediaWiki",
+  "version":      "0.1",
+  "license-name": "GPL-2.0+",
+  "type": "parserhook",
+  "Hooks": {
+    "ParserFirstCallInit": [
+      "Shiny::setHooks" 
+    ]
+  },
+  "config": {
+     "ShinyR":      "/usr/bin/R",
+     "ShinyAppDir": "/srv/shiny-server/mediawiki",
+     "ShinyUrl":    "http://localhost:8090/shiny/mediawiki"
+  },
+  "AutoloadClasses": {
+    "Shiny": "Shiny_body.php"
+  },
+  "manifest_version" : 1
+} 
+
